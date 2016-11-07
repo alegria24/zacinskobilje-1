@@ -18,7 +18,7 @@ body, figure {
   font-weight: 100;
 }
 
-div#captioned-gallery { 
+div#gallery { 
   width: 100%; overflow: hidden; 
 }
 
@@ -43,7 +43,7 @@ figure.slider figure figcaption {
 }
 
 
-/* A simple, css only, (some-what) responsive menu */
+/* Meni za kompanije */
 
 body { 
   background: #2B2B2B;
@@ -52,7 +52,7 @@ body {
   text-align: center;
 }
  
-.wrap {display: inline-block;}
+.meni {display: inline-block;}
 
 a {
   text-decoration: none;
@@ -87,113 +87,108 @@ nav {
 }
 
 
-ul.primary {
+ul.glavne {
   padding: 0px;
   margin: 0px;
 }
 
-ul.primary li a {
+ul.glavne li a {
   display: block;
   padding: 20px 30px;
 }
 
-ul.primary li a:hover {  
+ul.glavne li a:hover {  
   color: #000;
 }
 
-ul.sub {
+ul.sporedne {
   position: absolute;
   z-index: 200;
   width: 35%;
   display:none;
 }
 
-ul.sub li {
+ul.sporedne li {
   float: none;
   margin: 0;
 }
 
-ul.sub li a {
+ul.sporedne li a {
   border-bottom: 1px dotted #ccc;
   border-right: none;
   color: #000;
 }
 
-ul.sub li:last-child a {
+ul.sporedne li:last-child a {
   border-bottom: none;
 }
 
-ul.sub li a:hover {
+ul.sporedne li a:hover {
   color: #000;
   background: #eeeeee;
 }
 
-ul.primary li:hover ul {
+ul.glavne li:hover ul {
   display: block;
   background: #fff;
 }
 
-ul.primary li:hover a {
+ul.glavne li:hover a {
   background: #fff;
   color: #666;
   text-shadow: none;
 }
 
-ul.primary li:hover > a{
+ul.glavne li:hover > a{
   color: #000;
 } 
 
-@media only screen and (max-width: 600px) {
-  .decor { padding: 3px; }  
-  .wrap { width: 100%; margin-top: 0px; }
+@media only screen and (max-width: 600px) { 
+  .meni { width: 100%; margin-top: 0px; }
   
-   li {
+  li {
     float: none;
   }
   
-  ul.primary li:hover a {
+  ul.glavne li:hover a {
     background: none;
     color: #8B8B8B;
     text-shadow: 1px 1px #000;
   }
 
-  ul.primary li:hover ul {
+  ul.glavne li:hover ul {
     display: block;
     background: #272727;
     color: #fff;
   }
   
-  ul.sub {
+  ul.sporedne {
     display: block;  
     position: static;
     box-shadow: none;
     width: 100%;
   }
   
-  ul.sub li a {
+  ul.sporedne li a {
     background: #272727;
   	border: none;
     color: #8B8B8B;
   }
   
-  ul.sub li a:hover {
+  ul.sporedne li a:hover {
     color: #ccc;
     background: none;
   }
 }
 
-//Novosti i tako to
+/* Novosti */
 
-body {
-	
-}
-
-#wrapper {
+#novosti {
 	width: 90%;
 	margin: 50px auto;
 }
 
-#columns {
+#kolone {
 	column-count: 1;
 	column-gap: 15px;
 	column-fill: auto;
@@ -225,36 +220,34 @@ body {
 }
 
 @media (min-width: 680px) {
-	#columns {
+	#kolone {
 		column-count: 2;
 	}
 }
 
 @media (min-width: 820px) {
-	#columns {
+	#kolone {
 		column-count: 3;
 	}
 }
 
 @media (min-width: 960px) {
-	#columns {
+	#kolone {
 		column-count: 4;
 	}
 }
 
 @media (min-width: 1100px) {
-	#columns {
+	#kolone {
 		column-count: 5;
 	}
 }
 
-#columns:hover .pin:not(:hover) {
+#kolone:hover .pin:not(:hover) {
 	opacity: 0.4;
 }
 
-
-
-//Pretplati_se
+/* Pretplati se forma */
 
 html {
   font-family: 'Raleway', sans-serif;
@@ -297,7 +290,7 @@ button:hover {
 }
 
 
-//Footer
+/* Footer */
 
 .footer{
 	background-color: #292c2f;
@@ -350,21 +343,12 @@ button:hover {
 		font-size: 18px;
 	}
 
-	.footer .footer-copyright{
-		font-size: 12px;
-	}
+	.footer .footer-copyright { font-size: 12px; }
 
 	.footer .footer-links{
 		font-size: 14px;
 		padding: 25px 0 20px;
 	}
 
-	.footer .footer-links a{
-		line-height: 1.8;
-	}
+	.footer .footer-links a { line-height: 1.8; }
 }
-
-
-
-
-
