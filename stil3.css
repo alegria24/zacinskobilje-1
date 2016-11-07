@@ -137,52 +137,111 @@ ul.primary li:hover > a{
   }
 }
 
-//Kontakt
+//Slika
 
-#contact {width:100%; height:100%; margin 0 auto; background: #DDD; }
-.container {width:80%; height:auto; margin: 0 auto; padding: 50px 0;}
+@import url(http://fonts.googleapis.com/css?family=Expletus+Sans:600);
 
-#contact .container form input,
-#contact .container form textarea {
-	width:97.6%;
-	height:30px;
-	padding:5px 10px;
-	font-size: 12px;
-	letter-spacing:1px;
-	margin-bottom:25px;
+@keyframes roll-out {}
+
+main{
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Expletus Sans';
+  margin-bottom: 15px;
 }
 
-#contact .container form input:focus,
-#contact .container form textarea:focus {
-	border:2px solid #dd4545;
-	color:#999;
+.hero{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  background: #2B2B2B;
+  position: relative; 
+  color: white;
 }
 
-#contact .container form textarea {
-	height:150px;
+.hero h1{
+  font-size: 4.1em;
+  margin: auto;
+  position: absolute; 
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.hero p{
+  font-size: 1.5em;
+  margin: auto;
+  position: absolute; 
+  top: 220px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-#contact .container form .submit {
-	width:100%;
-	height:40px;
-	padding:5px 10px;
-	font-size: 12px;
-	letter-spacing:1px;
-	background:#dd4545;
-	text-transform:uppercase;
-	color:#FFF;
-	border:2px solid;
- }
-
-#contact .container form .submit:hover {
-	color:#FFF;
-	border:2px solid;
-	background: #b43838;
-	cursor:pointer;
+.hero img{
+  width: 100%;
 }
 
-#contact .container form .required {color:#b43838;}
+.bar{
+  width: 100%;
+  height: 200px;
+  background: #2B2B2B;
+  opacity: 0.6;
+  position: absolute; 
+  top: 90px;
+}
 
+
+@media all and (max-width: 768px) {
+
+  .hero{
+    height: 50vw;
+  }
+  
+  .bar{
+    height: 26vw;
+    top: 10vw;
+  }
+  
+  .hero h1{
+    font-size: 8vw;
+    top: 13vw;
+  }
+  
+  .hero p{
+    font-size: 3vw;
+    top: 27vw;
+  } 
+}
+
+//Tekst
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.text {
+  width: 100%;
+  max-width: 1300px;
+  font-family: 'Expletus Sans';
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 30px;
+  border-bottom: 1px solid #aaa;
+  text-align: justify;
+  margin: 0px auto;
+  color: white;   
+}
+
+@media (max-width: 768px) {
+    .text {
+      width: 80%;
+    }
+}
 
 //Footer
 
@@ -237,7 +296,7 @@ ul.primary li:hover > a{
 		font-size: 18px;
 	}
 
-	.footer .footer-copyright{{
+	.footer .footer-copyright{
 		font-size: 12px;
 	}
 

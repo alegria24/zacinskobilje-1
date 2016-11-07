@@ -265,13 +265,16 @@ body {
 }
 
 .footer .footer-motto{
+	width: 100%;
+	max-width: 600px;
 	color:  #8d9093;
 	font-family: 'Cousine';
 	font-size: 10px;
-	margin: 0;
+	margin: 0px auto;
+	margin-top: 30px;
 }
 
-.footer .footer-copyright{{
+.footer .footer-copyright{
 	color:  #8f9296;
 	font-size: 14px;
 	font-family: 'Cousine';
