@@ -253,6 +253,50 @@ body {
 }
 
 
+
+//Pretplati_se
+
+html {
+  font-family: 'Raleway', sans-serif;
+}
+
+form {
+	color: white;
+	width: 80%;
+	margin: 0 auto; 
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+
+input[type=email]{
+    width: 100%;
+    padding: 12px 12px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    background: #dd4545;
+	text-transform: uppercase;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+	color:#FFF;
+	border:2px solid;
+	background: #b43838;
+	cursor:pointer;
+}
+
+
 //Footer
 
 .footer{
@@ -319,3 +363,8 @@ body {
 		line-height: 1.8;
 	}
 }
+
+
+
+
+
