@@ -137,112 +137,61 @@ ul.primary li:hover > a{
   }
 }
 
-//Slika
+//Forma
 
-@import url(http://fonts.googleapis.com/css?family=Expletus+Sans:600);
-
-@keyframes roll-out {}
-
-main{
-  width: 100%;
-  max-height: 960px;
-  overflow: hidden;
-  font-family: 'Expletus Sans';
-  margin-bottom: 15px;
+html {
+  font-family: 'Raleway', sans-serif;
 }
 
-.hero{
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin: 0 auto;
-  background: #2B2B2B;
-  position: relative; 
-  color: white;
+form {
+	color: white;
+	width: 80%;
+	margin: 0 auto; 
+	margin-bottom: 40px;
+	margin-top: 20px;
 }
 
-.hero h1{
-  font-size: 4.1em;
-  margin: auto;
-  position: absolute; 
-  top: 120px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.hero p{
-  font-size: 1.5em;
-  margin: auto;
-  position: absolute; 
-  top: 220px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.hero img{
-  width: 100%;
+button {
+    font-family: 'Raleway', sans-serif;
+    background: #dd4545;
+	text-transform: uppercase;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
-.bar{
-  width: 100%;
-  height: 200px;
-  background: #2B2B2B;
-  opacity: 0.6;
-  position: absolute; 
-  top: 90px;
+button:hover {
+	color:#FFF;
+	border:2px solid;
+	background: #b43838;
+	cursor:pointer;
+}
+
+span.psw {
+    float: right;
+	color: black;	
 }
 
 
-@media all and (max-width: 768px) {
+@media screen and (max-width: 300px) {
+    span.psw {
 
-  .hero{
-    height: 50vw;
-  }
-  
-  .bar{
-    height: 26vw;
-    top: 10vw;
-  }
-  
-  .hero h1{
-    font-size: 8vw;
-    top: 13vw;
-  }
-  
-  .hero p{
-    font-size: 3vw;
-    top: 27vw;
-  } 
-}
-
-//Tekst
-
-body {
-  padding: 0px;
-  margin: 0px;
-}
-
-.text {
-  width: 100%;
-  max-width: 1300px;
-  font-family: 'Expletus Sans';
-  font-size: 16px;
-  line-height: 1.5em;
-  padding: 30px;
-  border-bottom: 1px solid #aaa;
-  text-align: justify;
-  margin: 0px auto;
-  color: white;   
-}
-
-@media (max-width: 768px) {
-    .text {
-      width: 80%;
+        float: none;
     }
 }
+
 
 //Footer
 
@@ -262,7 +211,7 @@ body {
 	font-family: 'Cousine';
 	font-size: 10px;
 	margin: 0px auto;
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 .footer .footer-copyright{
