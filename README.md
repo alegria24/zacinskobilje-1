@@ -10,6 +10,7 @@ Stranica ujedno nudi mogućnost potencijalnim kupcima da se informišu o načini
 
 I Šta je urađeno?
 - Napravljene su odgovarajuće skice za podstranice koje su implementirane u prvoj spirali. 
+- Skica za igled mobilne verzije je urađena samo za Home page s obzirom da su samo za tu stranicu vidljive značajnije promjene. 
 - Implementiran je meni web stranice. 
 - Meni je dijelom padajući i vidljiv je na svim implementiranim podstranicama.  
 - Implementirane su tražene html forme ("Pretplati se forma", "Kontakt forma", "Sign Up forma", "Sign in forma"). 
