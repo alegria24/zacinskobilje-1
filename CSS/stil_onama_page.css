@@ -1,139 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine');
+
 /* Meni za kompanije */
 
-body { 
-  background: #2B2B2B;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: center;
-}
- 
-.meni {display: inline-block;}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
+body {
+	font-family: 'Cousine';
+	background: #181818;
 }
 
-ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
+* {
+	box-sizing: border-box;
 }
 
-li {
-  float: left;
+header {
+	background: #181818;
+	height: 50px;
+	padding-top: 5px;
 }
 
-ul:after {
-  clear: both;
+.inner {
+	max-width: 2000px;
+	margin: 0 auto;
+	padding: 0px 80px;
+	position: relative;
 }
 
-ul:before, ul:after {
-    content: " ";
-    display: table;
+nav > ul {
+  	float: right;
 }
 
-nav {
-  position: relative;
-  background: #2B2B2B;
-  text-align: center;
-  letter-spacing: 1px;
+nav > ul > li {
+  	text-align: center;
+	line-height: 40px;
+	margin-left: 60px;
 }
 
-
-ul.glavne {
-  padding: 0px;
-  margin: 0px;
+nav > ul li ul li {
+	width: 200%;
+  	text-align: left;
 }
 
-ul.glavne li a {
-  display: block;
-  padding: 20px 30px;
+nav ul li:hover {
+	position: relative;
+}
+nav ul li:hover > ul {
+  	display: block;
+	background: #181818; 
+}
+nav ul li:hover > a {
+	color: #fff;
+}
+nav > ul > li > a {
+	display: block;
+  	width: 200%;
+	text-decoration: none;
 }
 
-ul.glavne li a:hover {  
-  color: #000;
+nav > ul > li {
+  	float: left;
 }
 
-ul.sporedne {
-  position: absolute;
-  z-index: 200;
-  width: 35%;
-  display:none;
+nav a {
+	color: white;
 }
 
-ul.sporedne li {
-  float: none;
-  margin: 0;
+nav > ul li ul {
+  	display: none;
+  	position: absolute;
+  	left: 0;
+	top: 100%;
+  	width: 500%;
+	z-index: 2000;
 }
 
-ul.sporedne li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  color: #000;
+nav > ul li ul li > a {
+	text-decoration: none;
 }
 
-ul.sporedne li:last-child a {
-  border-bottom: none;
+[type="checkbox"], label {
+  display: none;
 }
 
-ul.sporedne li a:hover {
-  color: #000;
-  background: #eeeeee;
-}
+@media screen and (max-width: 945px) {
+	nav ul {
+		display: none;
+	}
 
-ul.glavne li:hover ul {
-  display: block;
-  background: #fff;
-}
-
-ul.glavne li:hover a {
-  background: #fff;
-  color: #666;
-  text-shadow: none;
-}
-
-ul.glavne li:hover > a{
-  color: #000;
-} 
-
-@media only screen and (max-width: 600px) { 
-  .meni { width: 100%; margin-top: 0px; }
+	label {
+  		display: block;
+  		background: #222;
+		width: 40px;
+  		height: 40px;
+  		cursor: pointer;
+		position: absolute;
+		right: 20px;
+  		top: 0px;
+	}
   
-  li {
-    float: none;
-  }
-  
-  ul.glavne li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
+	label:after{
+	  content:'';
+	  display: block;
+	  width: 30px;
+	  height: 5px;
+	  background: #777;
+	  margin: 7px 5px;
+	  box-shadow: 0px 10px 0px #777, 0px 20px 0px #777
+	}
 
-  ul.glavne li:hover ul {
-    display: block;
-    background: #272727;
-    color: #fff;
-  }
+	[type="checkbox"]:checked ~ ul {
+  		display: block;
+  		z-index: 9999;
+  		position: absolute;
+		right: 20px;
+		left: 20px;
+	}
+
+	nav a {
+		color: #777;
+	}
+
+	nav ul li {
+		display: block;
+  		float: none;
+  		width: 100%;
+  		text-align: left;
+  		background: #222;
+		text-indent: 20px;
+	}
+
+	nav > ul > li {
+  		margin-left: 0px;
+	}
+
+	nav > ul li ul li {
+  		display: block;
+		float: none;
+	}
   
-  ul.sporedne {
-    display: block;  
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-  
-  ul.sporedne li a {
-    background: #272727;
-  	border: none;
-    color: #8B8B8B;
-  }
-  
-  ul.sporedne li a:hover {
-    color: #ccc;
-    background: none;
-  }
+	nav > ul li ul {
+		display: block;
+  		position: relative;
+  		width: 100%;
+		z-index: 9999;
+		float: none;
+	}
 }
 
 /* Slika */
@@ -246,7 +255,7 @@ body {
 /* Footer */
 
 .footer{
-	background-color: #292c2f;
+	background-color: #181818;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -259,7 +268,7 @@ body {
 	max-width: 600px;
 	color:  #8d9093;
 	font-family: 'Cousine';
-	font-size: 10px;
+	font-size: 11px;
 	margin: 0px auto;
 	margin-top: 30px;
 }
@@ -275,8 +284,9 @@ body {
 	list-style: none;
 	font-family: 'Cousine';
 	font-weight: bold;
+	font-size: 14px;
 	color:  #ffffff;
-	padding: 20px 0 0px;
+	padding: 18px 0 0px;
 	margin: 0;
 }
 
@@ -296,16 +306,12 @@ body {
 		font-size: 18px;
 	}
 
-	.footer .footer-copyright{
-		font-size: 12px;
-	}
+	.footer .footer-copyright { font-size: 12px; }
 
 	.footer .footer-links{
 		font-size: 14px;
 		padding: 25px 0 20px;
 	}
 
-	.footer .footer-links a{
-		line-height: 1.8;
-	}
+	.footer .footer-links a { line-height: 1.8; }
 }

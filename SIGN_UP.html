@@ -10,79 +10,70 @@
 </HEAD>
 
 <BODY> 
-<div class="meni">
-<nav>
-  <ul class="glavne">
-    <li>
-      <a href="Home.html">Home</a>
-    </li>
-    <li>
-      <a href="O_nama.html">O nama</a>
-    </li>
-    <li>
-      <a href="">ZB paketi</a>
-      <ul class="sporedne">
-        <li><a href="">Veliki ZB paket</a></li>
-        <li><a href="">Srednji ZB paket</a></li>
-        <li><a href="">Mali ZB paket</a></li>
+<header>
+  <div class="inner">
+    <nav>
+	  <input type="checkbox" id="nav" /><label for="nav"></label>
+      <ul>
+        <li><a href="Home.html">Home</a></li>       
+        <li>
+          <a href="O_nama.html">O nama</a>
+          <ul>
+            <li><a href="#">Naše usluge</a></li>
+            <li><a href="#">Naš tim</a></li>      
+          </ul>
+        </li>
+		<li>
+          <a href="O_nama.html">ZB paketi</a>
+          <ul>
+            <li><a href="#">Veliki ZB paket</a></li>
+            <li><a href="#">Srednji ZB paket</a></li> 
+			<li><a href="#">Mali ZB paket</a></li> 			
+          </ul>
+        </li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+		<li><a href="SIGN_UP.html">SIGN UP</a></li>
+		<li><a href="SIGN_IN.html">SIGN IN</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="">Začinsko bilje</a>
-    </li>
-    <li>
-      <a href="Kontakt.html">Kontakt</a> 
-    </li>
-	<li>
-      <a href="SIGN_UP.html">SIGN UP</a> 
-    </li>
-	<li>
-      <a href="SIGN_IN.html">SIGN IN</a> 
-    </li>
-  </ul>
-</nav>
-</div>
+    </nav>
+  </div>
+</header> 
 
-<form action="#">
+<form action="#" id="myForm">
   <div class="container">
-    <label><b>Ime i prezime</b></label>
     <input type="text" placeholder="Unesite vaše ime i prezime" name="name" required>
 	
-	<label><b>e-Mail adresa</b></label>
-	<input type="email" placeholder="Unesite vaš e-mail" name="mail" required>
+	<input type="text" placeholder="Unesite vaš e-mail" name="mail" required>
 	
-    <label><b>Korisničko ime</b></label>
     <input type="text" placeholder="Unesite vaše korisničko ime" name="username" required>
-
-    <label><b>Lozinka</b></label>
+	
     <input type="password" placeholder="Unesite vašu lozinku" name="password" required>
 	
-	<label><b>Ponovite lozinku</b></label>
     <input type="password" placeholder="Ponovno unesite odabranu lozinku" name="password2" required>
 
-    <button type="submit">REGISTRUJTE SE</button>
+    <button type="button" onclick="validacijaForme()">REGISTRUJTE SE</button>
   </div>
 </form>
 
 <footer class="footer">
+	<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
+	Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
 
-			<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
-			Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
-
-			<p class="footer-links">
-				<a href="Home.html">HOME</a>
-				·
-				<a href="O_nama.html">O NAMA</a>
-				·
-				<a href="#">ZB PAKETI</a>
-				·
-				<a href="#">ZAČINSKO BILJE</a>
-				·
-				<a href="Kontakt.html">KONTAKT</a>
-			</p>
-
-			<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
-
-		</footer>
+	<p class="footer-links">
+		<a href="Home.html">HOME</a>
+		·
+		<a href="O_nama.html">O NAMA</a>
+		·
+		<a href="#">ZB PAKETI</a>
+		·
+		<a href="#">ZAČINSKO BILJE</a>
+		·
+		<a href="Kontakt.html">KONTAKT</a>
+	</p>
+	
+	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
+</footer>
+		
+<script src="Signup_skripta.js"></script>
 </BODY>
 </HTML>

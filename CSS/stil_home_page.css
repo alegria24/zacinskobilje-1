@@ -1,5 +1,151 @@
 @import url('https://fonts.googleapis.com/css?family=Cousine');
 
+/* Meni za kompanije */
+
+body {
+	font-family: 'Cousine';
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	background: #181818;
+	height: 50px;
+	padding-top: 5px;
+}
+
+.inner {
+	max-width: 2000px;
+	margin: 0 auto;
+	padding: 0px 80px;
+	position: relative;
+}
+
+nav > ul {
+  	float: right;
+}
+
+nav > ul > li {
+  	text-align: center;
+	line-height: 40px;
+	margin-left: 60px;
+}
+
+nav > ul li ul li {
+	width: 200%;
+  	text-align: left;
+}
+
+nav ul li:hover {
+	position: relative;
+}
+nav ul li:hover > ul {
+  	display: block;
+	background: #181818; 
+}
+nav ul li:hover > a {
+	color: #fff;
+}
+nav > ul > li > a {
+	display: block;
+  	width: 200%;
+	text-decoration: none;
+}
+
+nav > ul > li {
+  	float: left;
+}
+
+nav a {
+	color: white;
+}
+
+nav > ul li ul {
+  	display: none;
+  	position: absolute;
+  	left: 0;
+	top: 100%;
+  	width: 500%;
+	z-index: 2000;
+}
+
+nav > ul li ul li > a {
+	text-decoration: none;
+}
+
+[type="checkbox"], label {
+  display: none;
+}
+
+@media screen and (max-width: 962px) {
+	nav ul {
+		display: none;
+	}
+
+	label {
+  		display: block;
+  		background: #222;
+		width: 40px;
+  		height: 40px;
+  		cursor: pointer;
+		position: absolute;
+		right: 20px;
+  		top: 0px;
+	}
+  
+	label:after{
+	  content:'';
+	  display: block;
+	  width: 30px;
+	  height: 5px;
+	  background: #777;
+	  margin: 7px 5px;
+	  box-shadow: 0px 10px 0px #777, 0px 20px 0px #777
+	}
+
+	[type="checkbox"]:checked ~ ul {
+  		display: block;
+  		z-index: 9999;
+  		position: absolute;
+		right: 20px;
+		left: 20px;
+	}
+
+	nav a {
+		color: #777;
+	}
+
+	nav ul li {
+		display: block;
+  		float: none;
+  		width: 100%;
+  		text-align: left;
+  		background: #222;
+		text-indent: 20px;
+	}
+
+	nav > ul > li {
+  		margin-left: 0px;
+	}
+
+	nav > ul li ul li {
+  		display: block;
+		float: none;
+	}
+  
+	nav > ul li ul {
+		display: block;
+  		position: relative;
+  		width: 100%;
+		z-index: 9999;
+		float: none;
+	}
+}
+
+/*Slider*/
+
 @keyframes slidy {
 0% { left: 0%; }
 20% { left: 0%; }
@@ -13,13 +159,14 @@
 }
 
 body, figure { 
-  margin: 0; background: #101010;
-  font-family: 'Helvetica';
-  font-weight: 100;
+  margin: 0; background: #181818;
+  font-family: 'Cousine';
+  font-weight: 80;
 }
 
 div#gallery { 
   width: 100%; overflow: hidden; 
+  padding-bottom: 20px;
 }
 
 figure.slider { 
@@ -39,184 +186,80 @@ figure.slider figure figcaption {
   position: absolute; bottom: 0;
   background: rgba(0,0,0,0.4);
   color: #fff; width: 100%;
-  font-size: 2rem; padding: .6rem; 
+  font-size: 1rem; padding: .6rem; 
 }
 
 
-/* Meni za kompanije */
+/*Random*/
 
-body { 
-  background: #2B2B2B;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: center;
-}
- 
-.meni {display: inline-block;}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-}
-
-ul {
-  list-style: none;
-  position: relative;
-  text-align: left;
-}
-
-li {
-  float: left;
-}
-
-ul:after {
-  clear: both;
-}
-
-ul:before, ul:after {
-    content: " ";
-    display: table;
-}
-
-nav {
-  position: relative;
-  background: #2B2B2B;
-  text-align: center;
-  letter-spacing: 1px;
+h3 {
+	font-family: 'Cousine';
+	color: white;
+	margin-left: 20px;
 }
 
 
-ul.glavne {
-  padding: 0px;
-  margin: 0px;
-}
+/*Galerija*/
 
-ul.glavne li a {
-  display: block;
-  padding: 20px 30px;
-}
-
-ul.glavne li a:hover {  
-  color: #000;
-}
-
-ul.sporedne {
-  position: absolute;
-  z-index: 200;
-  width: 35%;
-  display:none;
-}
-
-ul.sporedne li {
-  float: none;
-  margin: 0;
-}
-
-ul.sporedne li a {
-  border-bottom: 1px dotted #ccc;
-  border-right: none;
-  color: #000;
-}
-
-ul.sporedne li:last-child a {
-  border-bottom: none;
-}
-
-ul.sporedne li a:hover {
-  color: #000;
-  background: #eeeeee;
-}
-
-ul.glavne li:hover ul {
-  display: block;
-  background: #fff;
-}
-
-ul.glavne li:hover a {
-  background: #fff;
-  color: #666;
-  text-shadow: none;
-}
-
-ul.glavne li:hover > a{
-  color: #000;
-} 
-
-@media only screen and (max-width: 600px) { 
-  .meni { width: 100%; margin-top: 0px; }
-  
-  li {
-    float: none;
-  }
-  
-  ul.glavne li:hover a {
-    background: none;
-    color: #8B8B8B;
-    text-shadow: 1px 1px #000;
-  }
-
-  ul.glavne li:hover ul {
-    display: block;
-    background: #272727;
-    color: #fff;
-  }
-  
-  ul.sporedne {
-    display: block;  
-    position: static;
-    box-shadow: none;
-    width: 100%;
-  }
-  
-  ul.sporedne li a {
-    background: #272727;
-  	border: none;
-    color: #8B8B8B;
-  }
-  
-  ul.sporedne li a:hover {
-    color: #ccc;
-    background: none;
-  }
-}
-
-/* Novosti */
-
-#novosti {
+#galerija {
 	width: 90%;
 	margin: 50px auto;
 }
 
 #kolone {
-	column-count: 1;
-	column-gap: 15px;
-	column-fill: auto;
+	column-gap: 40px;
+	column-fill: balance;
+	column-width: 300px;
 }
 
 .pin {
 	display: inline-block;
 	background: #FEFEFE;
-	border: 2px solid #FAFAFA;
+	border: 1px solid #FAFAFA;
 	margin: 0 2px 15px;
-	padding: 15px;
-	padding-bottom: 5px;
+	padding: 10px;
 	opacity: 1;
 	transition: all .2s ease;
 }
 
-.pin img {
+#myImg1{	
 	width: 100%;
 	height: auto;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
-.pin p {
-	font: 12px/18px Arial, sans-serif;
-	color: #333;
-	margin: 0;
+#myImg2{
+	width: 100%;
+	height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#myImg3{
+	width: 100%;
+	height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#myImg4{
+	width: 100%;
+	height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#myImg5{
+	width: 100%;
+	height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
 @media (min-width: 680px) {
@@ -247,10 +290,140 @@ ul.glavne li:hover > a{
 	opacity: 0.4;
 }
 
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/*Novosti*/
+
+#novosti {
+	margin: auto;
+}
+
+.novost {
+  font-family: 'Cousine';
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 250px;
+  max-width: 310px;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+}
+
+.novost .image {
+  max-height: 220px;
+  overflow: hidden;
+}
+.novost img {
+  max-width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.novost figcaption {
+  margin: -40px 15px 0;
+  padding: 15px ;
+  position: relative;
+  background-color: #ffffff;
+}
+.novost .date {
+  background-color: #dd4545;
+  top: 15px;
+  color: #fff;
+  left: 15px;
+  min-height: 48px;
+  min-width: 48px;
+  position: absolute;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.novost .date span {
+  display: block;
+  line-height: 24px;
+}
+.novost .date .month {
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.novost h3, figure.novost p {
+  margin: 0;
+  padding: 0;
+}
+.novost h3 {
+  min-height: 50px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.novost p {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+.novost footer {
+  padding: 0 25px;
+  background-color: #dd4545;
+  color: #e6e6e6;
+  font-size: 0.8em;
+  line-height: 30px;
+  text-align: right;
+}
+.novost footer > div {
+  display: inline-block;
+  margin-left: 10px;
+}
+
 /* Pretplati se forma */
 
 html {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Cousine';
 }
 
 form {
@@ -258,20 +431,21 @@ form {
 	width: 80%;
 	margin: 0 auto; 
 	margin-bottom: 40px;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 input[type=email]{
     width: 100%;
     padding: 12px 12px;
     margin: 12px 0;
+	margin-top: 60px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
 button {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Cousine';
     background: #dd4545;
 	text-transform: uppercase;
     color: white;
@@ -293,7 +467,7 @@ button:hover {
 /* Footer */
 
 .footer{
-	background-color: #292c2f;
+	background-color: #181818;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -306,7 +480,7 @@ button:hover {
 	max-width: 600px;
 	color:  #8d9093;
 	font-family: 'Cousine';
-	font-size: 10px;
+	font-size: 11px;
 	margin: 0px auto;
 	margin-top: 30px;
 }
@@ -322,8 +496,9 @@ button:hover {
 	list-style: none;
 	font-family: 'Cousine';
 	font-weight: bold;
+	font-size: 14px;
 	color:  #ffffff;
-	padding: 20px 0 0px;
+	padding: 18px 0 0px;
 	margin: 0;
 }
 

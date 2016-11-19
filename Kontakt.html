@@ -10,38 +10,34 @@
 </HEAD>
 
 <BODY> 
-<div class="meni">
-<nav>
-  <ul class="glavne">
-    <li>
-      <a href="Home.html">Home</a>
-    </li>
-    <li>
-      <a href="O_nama.html">O nama</a>
-    </li>
-    <li>
-      <a href="">ZB paketi</a>
-      <ul class="sporedne">
-        <li><a href="">Veliki ZB paket</a></li>
-        <li><a href="">Srednji ZB paket</a></li>
-        <li><a href="">Mali ZB paket</a></li>
+<header>
+  <div class="inner">
+    <nav>
+	  <input type="checkbox" id="nav" /><label for="nav"></label>
+      <ul>
+        <li><a href="Home.html">Home</a></li>       
+        <li>
+          <a href="O_nama.html">O nama</a>
+          <ul>
+            <li><a href="#">Naše usluge</a></li>
+            <li><a href="#">Naš tim</a></li>      
+          </ul>
+        </li>
+		<li>
+          <a href="O_nama.html">ZB paketi</a>
+          <ul>
+            <li><a href="#">Veliki ZB paket</a></li>
+            <li><a href="#">Srednji ZB paket</a></li> 
+			<li><a href="#">Mali ZB paket</a></li> 			
+          </ul>
+        </li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+		<li><a href="SIGN_UP.html">SIGN UP</a></li>
+		<li><a href="SIGN_IN.html">SIGN IN</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="">Začinsko bilje</a>
-    </li>
-    <li>
-      <a href="Kontakt.html">Kontakt</a> 
-    </li>
-	<li>
-      <a href="SIGN_UP.html">SIGN UP</a> 
-    </li>
-	<li>
-      <a href="SIGN_IN.html">SIGN IN</a> 
-    </li>
-  </ul>
-</nav>
-</div>
+    </nav>
+  </div>
+</header> 
 
 <main>
   <div class="slika">
@@ -51,33 +47,37 @@
 
 <section id="contact">  
 	<div class="container">
-		<form name="htmlform" method="post" >
-			<input type="text" name="ime_i_prezime" placeholder="IME I PREZIME" required>		  
-			<input  type="email" name="email" placeholder="e-MAIL ADRESA" required>		  
-			<textarea name="opruka" placeholder="PORUKA" required ></textarea>		  
-			<button name="pošalji" type="submit" class="submit">POŠALJI</button>		  
+		<form name="htmlform" method="post" id="myForm">
+			<input type="text" name="ime_i_prezime" placeholder="IME I PREZIME">		  
+			<input  type="text" name="email" placeholder="e-MAIL ADRESA">		  
+			<textarea name="opruka" placeholder="PORUKA"></textarea>		  
+			<button name="pošalji" class="submit" type="button" onclick="validacijaForme()">POŠALJI</button>		  
 		</form>	 
 	</div>
 </section>
 
+<p id="demo"></p>
+
 <footer class="footer">
-			<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
-			Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
+	<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
+	Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
 
-			<p class="footer-links">
-				<a href="Home.html">HOME</a>
-				·
-				<a href="O_nama.html">O NAMA</a>
-				·
-				<a href="#">ZB PAKETI</a>
-				·
-				<a href="#">ZAČINSKO BILJE</a>
-				·
-				<a href="Kontakt.html">KONTAKT</a>
-			</p>
+	<p class="footer-links">
+		<a href="Home.html">HOME</a>
+		·
+		<a href="O_nama.html">O NAMA</a>
+		·
+		<a href="#">ZB PAKETI</a>
+		·
+		<a href="#">ZAČINSKO BILJE</a>
+		·
+		<a href="Kontakt.html">KONTAKT</a>
+	</p>
+	
+	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
+</footer>
 
-			<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
+<script src="Kontakt_skripta.js"></script>
 
-		</footer>
 </BODY>
 </HTML>
