@@ -13,27 +13,27 @@
 <header>
   <div class="inner">
     <nav>
-	  <input type="checkbox" id="nav" class = "nav"><label for="nav"></label>
+	  <input type="checkbox" class="nav" /><label for="nav"></label>
       <ul>
-        <li><a href="Home.html">Home</a></li>       
+        <li><a id="home-link" href="#" onclick="get('index')">Home</a></li>       
         <li>
-          <a href="O_nama.html">O nama</a>
+          <a href="#" onclick="get('O_nama')">O nama</a>
           <ul>
             <li><a href="#">Naše usluge</a></li>
             <li><a href="#">Naš tim</a></li>      
           </ul>
         </li>
 		<li>
-          <a href="O_nama.html">ZB paketi</a>
+          <a href="#">ZB paketi</a>
           <ul>
             <li><a href="#">Veliki ZB paket</a></li>
             <li><a href="#">Srednji ZB paket</a></li> 
 			<li><a href="#">Mali ZB paket</a></li> 			
           </ul>
         </li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
-		<li><a href="SIGN_UP.html">SIGN UP</a></li>
-		<li><a href="SIGN_IN.html">SIGN IN</a></li>
+        <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
+		<li><a href="#" onclick="get('SIGN_UP')">SIGN UP</a></li>
+		<li><a href="#" onclick="get('SIGN_IN')">SIGN IN</a></li>
       </ul>
     </nav>
   </div>
@@ -54,24 +54,22 @@
 </form>
 
 <footer class="footer">
+	<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
+		Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
 
-			<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
-			Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
-
-			<p class="footer-links">
-				<a href="Home.html">HOME</a>
-				·
-				<a href="O_nama.html">O NAMA</a>
-				·
-				<a href="#">ZB PAKETI</a>
-				·
-				<a href="#">ZAČINSKO BILJE</a>
-				·
-				<a href="Kontakt.html">KONTAKT</a>
-			</p>
-
-			<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
-
-		</footer>
+	<p class="footer-links">
+		<a href="Home.html">HOME</a>
+		·
+		<a href="O_nama.html">O NAMA</a>
+		·
+		<a href="#">ZB PAKETI</a>
+		·
+		<a href="#">ZAČINSKO BILJE</a>
+		·
+		<a href="Kontakt.html">KONTAKT</a>
+	</p>
+	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
+</footer>
+<script src="skripta_home.js" type="text/javascript"></script>
 </BODY>
 </HTML>

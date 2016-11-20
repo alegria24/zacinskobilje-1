@@ -1,3 +1,22 @@
+function get(link)
+{
+    var ajax = new XMLHttpRequest();	
+	ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4 && ajax.status == 200)
+        {
+            document.open();
+            document.write(ajax.responseText);
+            document.close();
+        }
+        if (ajax.readyState == 4 && ajax.status == 404)
+        alert("error");
+       
+    }
+    ajax.open("GET", link + ".html", true);
+	     
+	ajax.send();
+}
+
 function validacijaForme() {
     var x, text;
 	var forma=document.getElementById('myForm');
