@@ -25,7 +25,6 @@ I Šta je urađeno?
 
 II Šta nije urađeno?
 - Korišten LOREM IPSUM tekst što treba izmijeniti kasnije. 
-- Implementirati drugačiji prikaz teksta greške pri unosu podataka s obzirom da korišteni alert nije dobra opcija.
 
 Napomena: Validacija na podstranici Sign In nije rađena s obzirom da će tu biti dovoljno kasnije ispisati da uneseni username ne postoji, bez da se prije toga ispituje da li zadovoljava uslove. Osoba se prije toga morala registrovati, pa će na Sign Up stranici svakako moći biti prihvaćeni oni podaci koji su ranije validirani tokom registracije.
 

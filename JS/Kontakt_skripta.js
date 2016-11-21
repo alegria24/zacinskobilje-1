@@ -26,16 +26,17 @@ function validacijaForme() {
 	var res = patt.test(x);
 	
 	if (forma['ime_i_prezime'].value == "") {
-       alert("Niste unijeli Vaše ime i prezime");
+       document.getElementById('greska').innerHTML = "Niste unijeli Vaše ime i prezime";
     }
     else if (res == false) {
-       alert("Neispravno unesen email");
+       document.getElementById('greska').innerHTML = "Neispravno unesen email";
 	   forma['email'].value = "";
     } 
 	else if (forma['opruka'].value.length < 50) {
-       alert("Vaša poruka treba da sadrži barem 50 karaktera.");
+       document.getElementById('greska').innerHTML = "Vaša poruka treba da sadrži barem 50 karaktera.";
     }
 	else{
 		document.getElementById("myForm").reset();
+		document.getElementById('greska').innerHTML = "Uspješno ste poslali Vašu poruku";
 	}
 }

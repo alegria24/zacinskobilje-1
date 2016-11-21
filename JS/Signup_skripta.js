@@ -36,28 +36,28 @@ function validacijaForme() {
 	var res3 = patt3.test(z);
 	
 	if (forma['name'].value == "") {
-       alert("Niste unijeli Vaše ime i prezime");
+       document.getElementById('greska').innerHTML = "Niste unijeli Vaše ime i prezime";
     }
     else if (res1 == false) {
-       alert("Neispravno unesen email");
+       document.getElementById('greska').innerHTML = "Neispravno unesen email";
     } 
 	else if (res2 == false) {
-       alert("Neispravno uneseno korisničko ime. Dužina korisničkog imena treba da bude od 3 do 16 znakova. Dozvoljena je upotreba ovih znakova: slovo, brojevi, crtica i donja crta.");
+       document.getElementById('greska').innerHTML = "Neispravno uneseno korisničko ime. Dužina korisničkog imena treba da bude od 3 do 16 znakova. Dozvoljena je upotreba ovih znakova: slovo, brojevi, crtica i donja crta.";
     } 	
 	else if (res3 == false) {
-       alert("Neispravno unesena lozinka. Dužina lozinke treba da bude od 6 do 18 znakova. Dozvoljena je upotreba ovih znakova: slovo, brojevi, crtica i donja crta.");
+       document.getElementById('greska').innerHTML = "Neispravno unesena lozinka. Dužina lozinke treba da bude od 6 do 18 znakova. Dozvoljena je upotreba ovih znakova: slovo, brojevi, crtica i donja crta.";
 	   forma['password'].value = "";
     } 
 	else if (forma['password2'].value == "") {
-       alert("Potvrdite unesenu lozinku");
+       document.getElementById('greska').innerHTML = "Potvrdite unesenu lozinku";
     }
 	else if (forma['password'].value != forma['password2'].value) {
-       alert("Unesene su dvije različite lozinke.");
+       document.getElementById('greska').innerHTML = "Unesene su dvije različite lozinke.";
 	   forma['password'].value = "";
 	   forma['password2'].value = "";
     }
 	else{
-		alert("Uspješno ste se registrovali!");
+		document.getElementById('greska').innerHTML = "Uspješno ste se registrovali!";
 		document.getElementById("myForm").reset();
 	}
 }
