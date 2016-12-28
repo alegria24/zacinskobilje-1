@@ -107,18 +107,10 @@ nav > ul li ul li > a {
 	  box-shadow: 0px 10px 0px #777, 0px 20px 0px #777
 	}
 
-	[type="checkbox"].nav1:checked ~ ul {
+	[type="checkbox"]:checked ~ ul {
   		display: block;
   		z-index: 9999;
   		position: absolute;
-		right: 20px;
-		left: 20px;
-	}
-
-	[type="checkbox"].nav2:checked ~ ul {
-			display: block;
-			z-index: 9999;
-			position: absolute;
 		right: 20px;
 		left: 20px;
 	}
