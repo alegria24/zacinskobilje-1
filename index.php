@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE HTML>
 <HTML>
 
@@ -11,14 +15,16 @@
 
 <BODY>
 
-<header>
+<<header>
+<?php if(isset($_SESSION['user'])){
+        if($_SESSION['user'] == "admin" || $_SESSION['user'] == "guest") { ?>
   <div class="inner">
     <nav>
 	  <input type="checkbox" id="nav" /><label for="nav"></label>
       <ul>
-        <li><a id="home-link" href="#" onclick="get('index')">Home</a></li>
+        <li><a id="home-link" href="index.php">Home</a></li>
         <li>
-          <a href="#" onclick="get('O_nama')">O nama</a>
+          <a href="o_nama.php">O nama</a>
           <ul>
             <li><a href="#">Naše usluge</a></li>
             <li><a href="#">Naš tim</a></li>
@@ -32,13 +38,42 @@
 			<li><a href="#">Mali ZB paket</a></li>
           </ul>
         </li>
-        <li><a href="#" onclick="get('proizvodi')">Proizvodi</a></li>
-        <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
-		<li><a href="#" onclick="get('SIGN_UP')">SIGN UP</a></li>
-		<li><a href="#" onclick="get('SIGN_IN')">SIGN IN</a></li>
+        <li><a href="proizvodi.php">Proizvodi</a></li>
+        <li><a href="kontakt.php">Kontakt</a></li>
+		<li><a href="log_out.php">Log Out</a></li>
       </ul>
     </nav>
   </div>
+  <?php } } 
+   if((!isset($_SESSION['user']) || $_SESSION['user'] == "unknown")) { ?>
+   <div class="inner">
+    <nav>
+	  <input type="checkbox" id="nav" /><label for="nav"></label>
+      <ul>
+              <li><a id="home-link" href="index.php">Home</a></li>
+        <li>
+          <a href="o_nama.php">O nama</a>
+          <ul>
+            <li><a href="#">Naše usluge</a></li>
+            <li><a href="#">Naš tim</a></li>
+          </ul>
+        </li>
+		<li>
+          <a href="#">ZB paketi</a>
+          <ul>
+            <li><a href="#">Veliki ZB paket</a></li>
+            <li><a href="#">Srednji ZB paket</a></li>
+			<li><a href="#">Mali ZB paket</a></li>
+          </ul>
+        </li>
+        <li><a href="proizvodi.php">Proizvodi</a></li>
+        <li><a href="kontakt.php">Kontakt</a></li>
+		<li><a href="sign_up.php">SIGN UP</a></li>
+		<li><a href="sign_in.php">SIGN IN</a></li>
+      </ul>
+    </nav>
+  </div>
+  <?php } ?>
 </header>
 
 <div class="subpage-home">

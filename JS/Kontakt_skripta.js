@@ -32,7 +32,7 @@ function validacijaForme() {
        document.getElementById('greska').innerHTML = "Neispravno unesen email";
 	   forma['email'].value = "";
     } 
-	else if (forma['opruka'].value.length < 50) {
+	else if (forma['poruka'].value.length < 50) {
        document.getElementById('greska').innerHTML = "Vaša poruka treba da sadrži barem 50 karaktera.";
     }
 	else{

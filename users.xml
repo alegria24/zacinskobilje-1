@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<AllUsers>
+<User>
+<Role>admin</Role>
+<Name>Admin Admin</Name>
+<Username>admin</Username>
+<Email>admin@admin.zb</Email>
+<Password>adminpass</Password>
+</User>
+</AllUsers>

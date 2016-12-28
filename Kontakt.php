@@ -1,5 +1,25 @@
-<?php
-  session_start();
+ <?php
+    session_start();
+    $xml = new DOMDocument();
+    $xml->load('contacts.xml');
+    if(isset($_POST['ime_i_prezime']) && isset($_POST['email']) && isset($_POST['poruka']))
+    {
+        $rootTag = $xml->getElementsByTagName("Contacts")->item(0);
+        $dataTag = $xml->createElement("Podaci");
+        $imeTag = $xml->createElement("Ime");
+        $imeTag->appendChild($xml->createTextNode($_REQUEST['ime_i_prezime']));
+        $emailTag = $xml->createElement("Email");
+        $emailTag->appendChild($xml->createTextNode($_REQUEST['email']));
+        $msgTag = $xml->createElement("Poruka");
+        $msgTag->appendChild($xml->createTextNode($_REQUEST['poruka']));
+            
+        $dataTag->appendChild($imeTag);
+        $dataTag->appendChild($emailTag);
+        $dataTag->appendChild($msgTag);
+        $rootTag->appendChild($dataTag);
+        $xml->save('contacts.xml');
+        header('Location:'.$_SERVER['PHP_SELF']);
+    }
 ?>
 
 <!DOCTYPE HTML>
@@ -83,14 +103,14 @@
 
 <section id="contact">
 	<div class="container">
-		<form name="htmlform" method="post" id="myForm">
+		<form name="myForm" method="post" id="myForm" enctype="multipart/form-data" accept-charset="utf-8" action ='Kontakt.php'>
 			<input type="text" name="ime_i_prezime" placeholder="IME I PREZIME">
 			<input  type="text" name="email" placeholder="e-MAIL ADRESA">
-			<textarea name="opruka" placeholder="PORUKA"></textarea>
-			<button name="pošalji" class="submit" type="button" onclick="validacijaForme()">POŠALJI</button>
-		</form>
-
+			<textarea name="poruka" placeholder="PORUKA"></textarea>
+			<button name="posalji" type="submit" onclick="validacijaForme()">POŠALJI</button>
+		
 		<p id="greska" style="color:white;"></p>
+		</form>
 	</div>
 </section>
 

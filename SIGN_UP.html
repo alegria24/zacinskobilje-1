@@ -9,50 +9,51 @@
 <link rel="stylesheet" type="text/css" href="CSS/stil_signup_page.css">
 </HEAD>
 
-<BODY> 
+<BODY>
 <header>
   <div class="inner">
     <nav>
 	  <input type="checkbox" id="nav" /><label for="nav"></label>
       <ul>
-        <li><a id="home-link" href="#" onclick="get('index')">Home</a></li>       
+        <li><a id="home-link" href="#" onclick="get('index')">Home</a></li>
         <li>
           <a href="#" onclick="get('O_nama')">O nama</a>
           <ul>
             <li><a href="#">Naše usluge</a></li>
-            <li><a href="#">Naš tim</a></li>      
+            <li><a href="#">Naš tim</a></li>
           </ul>
         </li>
 		<li>
           <a href="#">ZB paketi</a>
           <ul>
             <li><a href="#">Veliki ZB paket</a></li>
-            <li><a href="#">Srednji ZB paket</a></li> 
-			<li><a href="#">Mali ZB paket</a></li> 			
+            <li><a href="#">Srednji ZB paket</a></li>
+			<li><a href="#">Mali ZB paket</a></li>
           </ul>
         </li>
+        <li><a href="#" onclick="get('proizvodi')">Proizvodi</a></li>
         <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
 		<li><a href="#" onclick="get('SIGN_UP')">SIGN UP</a></li>
 		<li><a href="#" onclick="get('SIGN_IN')">SIGN IN</a></li>
       </ul>
     </nav>
   </div>
-</header> 
+</header>
 
 <form action="#" id="myForm">
   <div class="container">
     <input type="text" placeholder="Unesite vaše ime i prezime" name="name" required>
-	
+
 	<input type="text" placeholder="Unesite vaš e-mail" name="mail" required>
-	
+
     <input type="text" placeholder="Unesite vaše korisničko ime" name="username" required>
-	
+
     <input type="password" placeholder="Unesite vašu lozinku" name="password" required>
-	
+
     <input type="password" placeholder="Ponovno unesite odabranu lozinku" name="password2" required>
 
     <button type="button" onclick="validacijaForme()">REGISTRUJTE SE</button>
-	
+
 	<p id="greska" style="color:white;"></p>
   </div>
 </form>
@@ -72,10 +73,10 @@
 		·
 		<a href="Kontakt.html">KONTAKT</a>
 	</p>
-	
+
 	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
 </footer>
-		
+
 <script src="JS/Signup_skripta.js"></script>
 </BODY>
 </HTML>

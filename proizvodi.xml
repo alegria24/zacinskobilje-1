@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<AllSpices>
+<Spice>
+<Name>Allspice</Name>
+<Cuisine>Caribbean</Cuisine>
+<Flavor>Earthy, Sweet</Flavor>
+<Use>Soups, Desserts, Breads</Use>
+<Price>5.95</Price>
+</Spice>
+
+<Spice>
+<Name>Basil</Name>
+<Cuisine>Thai, Mediterranean</Cuisine>
+<Flavor>Sweet</Flavor>
+<Use>Salad Dressings, Sauces, Marinades</Use>
+<Price>3.75</Price>
+</Spice>
+
+<Spice>
+<Name>Cardamom</Name>
+<Cuisine>Indian, Thai, North African</Cuisine>
+<Flavor>Sweet</Flavor>
+<Use>Curries, Rice</Use>
+<Price>2.55</Price>
+</Spice>
+
+<Spice>
+<Name>Bay Leaves</Name>
+<Cuisine>Middle Eastern, Mediterranean</Cuisine>
+<Flavor>Bitter</Flavor>
+<Use>Risotto, Soups</Use>
+<Price>2.80</Price>
+</Spice>
+
+<Spice>
+<Name>Cayenne Pepper</Name>
+<Cuisine>Indian, Cajun</Cuisine>
+<Flavor>Spicy</Flavor>
+<Use>Rice, Soups, Sauces, Marinades</Use>
+<Price>3.50</Price>
+</Spice>
+
+<Spice>
+<Name>Cinnamon</Name>
+<Cuisine>Indian, Cajun</Cuisine>
+<Flavor>Earthy</Flavor>
+<Use>Sauces, Desserts, Breads</Use>
+<Price>3.90</Price>
+</Spice>
+
+<Spice>
+<Name>Cayenne Pepper</Name>
+<Cuisine>North African, Indian</Cuisine>
+<Flavor>Spicy</Flavor>
+<Use>Rice, Soups, Sauces, Marinades</Use>
+<Price>3.50</Price>
+</Spice>
+
+<Spice>
+<Name>Cloves</Name>
+<Cuisine>Mediterranean, Middle Eastern</Cuisine>
+<Flavor>Earthy, Sweet</Flavor>
+<Use>Curries, Soups, Marinades, Breads</Use>
+<Price>4.55</Price>
+</Spice>
+
+<Spice>
+<Name>Coriander</Name>
+<Cuisine>Indian, Mexican</Cuisine>
+<Flavor>Peppery, Earthy</Flavor>
+<Use>Curries, Soups, Sauces</Use>
+<Price>1.80</Price>
+</Spice>
+
+<Spice>
+<Name>Cumin</Name>
+<Cuisine>Thai, North African</Cuisine>
+<Flavor>Smokey, Earthy</Flavor>
+<Use>Curries, Rice, Marinades, Sauces</Use>
+<Price>2.80</Price>
+</Spice>
+
+<Spice>
+<Name>Ginger</Name>
+<Cuisine>Thai, Indian, Caribbean</Cuisine>
+<Flavor>Sweet, Warm</Flavor>
+<Use>Curries, Rice, Marinades</Use>
+<Price>2.20</Price>
+</Spice>
+
+<Spice>
+<Name>Nutmeg</Name>
+<Cuisine>French, Caribbean</Cuisine>
+<Flavor>Sweet</Flavor>
+<Use>Rice, Stuffings, Sauces</Use>
+<Price>4.25</Price>
+</Spice>
+
+<Spice>
+<Name>Oregano</Name>
+<Cuisine>French, Mexican, Cajun</Cuisine>
+<Flavor>Earthy</Flavor>
+<Use>Soups, Tomato Sauces, Salad Dressings</Use>
+<Price>1.75</Price>
+</Spice>
+</AllSpices>
