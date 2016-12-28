@@ -19,7 +19,7 @@
         if($_SESSION['user'] == "admin" || $_SESSION['user'] == "guest") { ?>
   <div class="inner">
     <nav>
-	  <input type="checkbox" id="nav1" /><label for="nav"></label>
+	  <input type="checkbox" /><label for="nav"></label>
       <ul>
         <li><a id="home-link" href="index.php">Home</a></li>
         <li>
@@ -47,7 +47,7 @@
    if((!isset($_SESSION['user']) || $_SESSION['user'] == "unknown")) { ?>
    <div class="inner">
     <nav>
-	  <input type="checkbox" id="nav2" /><label for="nav"></label>
+	  <input type="checkbox"/><label for="nav"></label>
       <ul>
               <li><a id="home-link" href="index.php">Home</a></li>
         <li>
@@ -86,7 +86,6 @@
         <p style="display:none" id="warningMessage"> Nepostojeći korisnik! Pokušajte se logovati ponovo. </p>
     <?php } ?>
 	<button type="submit">Prijavi se</button>
-	<input type="checkbox" checked="checked"> Zapamti
 	<a class="psw" href="#">Zaboravili ste vašu lozinku?</a>
 </div>
 </form>
