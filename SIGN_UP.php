@@ -104,7 +104,7 @@
   <?php } ?>
 </header>
 
-<form id="register_form" method="post" action="SIGN_UP.php" onsubmit="return validacijaForme()">
+<form id="register_form" method="post" action="sign_up.php" onsubmit="return validacijaForme()">
   <div class="container">
     <input type="text" placeholder="Unesite vaše ime i prezime" name="name" required>
 
@@ -127,16 +127,16 @@
 	Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
 
 	<p class="footer-links">
-		<a href="Home.html">HOME</a>
-		·
-		<a href="O_nama.html">O NAMA</a>
-		·
-		<a href="#">ZB PAKETI</a>
-		·
-		<a href="#">ZAČINSKO BILJE</a>
-		·
-		<a href="Kontakt.html">KONTAKT</a>
-	</p>
+			<a href="index.php">HOME</a>
+			·
+			<a href="o_nama.php">O NAMA</a>
+			·
+			<a href="#">ZB PAKETI</a>
+			·
+			<a href="proizvodi.php">ZAČINSKO BILJE</a>
+			·
+			<a href="kontakt.php">KONTAKT</a>
+		</p>
 
 	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
 </footer>

@@ -199,15 +199,15 @@ if(isset($_POST['dodajDugme']))
 		<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
 		Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
 		<p class="footer-links">
-			<a href="Home.html">HOME</a>
+			<a href="index.php">HOME</a>
 			·
-			<a href="O_nama.html">O NAMA</a>
+			<a href="o_nama.php">O NAMA</a>
 			·
 			<a href="#">ZB PAKETI</a>
 			·
-			<a href="#">ZAČINSKO BILJE</a>
+			<a href="proizvodi.php">ZAČINSKO BILJE</a>
 			·
-			<a href="Kontakt.html">KONTAKT</a>
+			<a href="kontakt.php">KONTAKT</a>
 		</p>
 
 		<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>

@@ -17,7 +17,7 @@ session_start();
         }
         if($bioUser) header('Location: index.php');
         if(!$bioUser){
-            header('Location: SIGN_IN.php');
+            header('Location: sign_in.php');
             $_SESSION['user'] = "unknown";   
         }
     }
