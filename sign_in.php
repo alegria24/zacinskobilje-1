@@ -19,7 +19,7 @@
         if($_SESSION['user'] == "admin" || $_SESSION['user'] == "guest") { ?>
   <div class="inner">
     <nav>
-	  <input type="checkbox" id="nav" /><label for="nav"></label>
+	  <input type="checkbox" id="nav1" /><label for="nav"></label>
       <ul>
         <li><a id="home-link" href="index.php">Home</a></li>
         <li>
@@ -43,11 +43,11 @@
       </ul>
     </nav>
   </div>
-  <?php } } 
+  <?php } }
    if((!isset($_SESSION['user']) || $_SESSION['user'] == "unknown")) { ?>
    <div class="inner">
     <nav>
-	  <input type="checkbox" id="nav" /><label for="nav"></label>
+	  <input type="checkbox" id="nav2" /><label for="nav"></label>
       <ul>
               <li><a id="home-link" href="index.php">Home</a></li>
         <li>
