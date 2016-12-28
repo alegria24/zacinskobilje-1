@@ -4,33 +4,33 @@
   $xml->load('proizvodi.xml');
   $error = false;
   $edit = false;
-  
+
   if(isset($_POST['obrisiDugme']))
-  {    
+  {
     $docElement = $xml->documentElement;
     $podaci = $docElement->getElementsByTagName('Spice');
     $rmv = null;
     $i = $_POST['obrisiDugme'];
     $rmv = $podaci[$i - 1];
     if($rmv != null) $docElement->removeChild($rmv);
-                  
+
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
   if(isset($_POST['editDugme']))
   {
-      $edit = true;  
+      $edit = true;
   }
 if(isset($_POST['dodajDugme']))
 {
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
         $rootTag = $xml->getElementsByTagName("AllSpices")->item(0);
-        
+
         $dataTag = $xml->createElement("Spice");
-        
+
         $nameTag = $xml->createElement("Name");
         $nameTag->appendChild($xml->createTextNode($_REQUEST['name']));
-        
+
         $cuisineTag  = $xml->createElement("Cuisine");
         $cuisineTag->appendChild($xml->createTextNode($_REQUEST['cuisine']));
         $flavorTag = $xml->createElement("Flavor");
@@ -39,13 +39,13 @@ if(isset($_POST['dodajDugme']))
         $usageTag->appendChild($xml->createTextNode($_REQUEST['usage']));
 		$priceTag = $xml->createElement("Price");
         $priceTag->appendChild($xml->createTextNode($_REQUEST['price']));
-        
+
         $dataTag->appendChild($nameTag);
 		$dataTag->appendChild($cuisineTag);
         $dataTag->appendChild($flavorTag);
         $dataTag->appendChild($usageTag);
 		$dataTag->appendChild($priceTag);
-        
+
         $rootTag->appendChild($dataTag);
         $xml->save('proizvodi.xml');
         header('Location:'.$_SERVER['PHP_SELF']);
@@ -96,7 +96,7 @@ if(isset($_POST['dodajDugme']))
       </ul>
     </nav>
   </div>
-  <?php } } 
+  <?php } }
    if((!isset($_SESSION['user']) || $_SESSION['user'] == "unknown")) { ?>
    <div class="inner">
     <nav>
@@ -140,34 +140,34 @@ if(isset($_POST['dodajDugme']))
     <li>Price</li>
 	<li></li>
   </ul>
-    
+
 
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
         foreach ($xml->children() as  $value) { ?>
 
-        <ul>
-          <li> <?php print $value->Name ?> </li>
-          <li><p> <?php print $value->Cuisine ?> </p></li> 
-          <li> <?php print $value->Flavor ?> </li> 
-		  <li><p> <?php print $value->Use ?> </p></li> 
-		  <li> <?php print $value->Price ?> </li> 
-		  <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
-          <li> 
-            <form action='proizvodi.php' method='post'>
-            <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
-            <button type="submit" name="obrisiDugme" value="<?php echo $x;?>"> Delete </button>
-            </form>
-          </li>
-          <?php } ?>
-        </ul>
-        <?php $x++; }  ?>
+          <ul>
+              <li> <?php print $value->Name ?> </li>
+              <li><p> <?php print $value->Cuisine ?> </p></li>
+              <li> <?php print $value->Flavor ?> </li>
+  		        <li><p> <?php print $value->Use ?> </p></li>
+  		        <li> <?php print $value->Price ?> </li>
+              <li>
+      		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
+                  <form action='proizvodi.php' method='post'>
+                  <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
+                  <button type="submit" name="obrisiDugme" value="<?php echo $x;?>"> Delete </button>
+                  </form>
+                <?php } ?>
+              </li>
+          </ul>
+      <?php $x++; }  ?>
 </div>
 	<!--End Pattern-->
-	
+
 	<?php
-         
+
         if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){ ?>
 
           <form align='center' id='proizvodForma' action='proizvodi.php' method='post'>;
