@@ -185,6 +185,9 @@ if(isset($_POST['dodajDugme']))
 
         <!-- Izvjestaji-->
         <div style="padding-left:43%; padding-top:2%;">
+			<form style="display:inline-block;" id="searchForma" action="pretraga.php">
+              <input id="pretraga-button" type="submit" value="Pretraga">
+            </form>
 			<?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin") { ?>
             <form style="display:inline-block;" id="izvjestajForma" action="izvjestaj.php">
               <input id="izvjestaj-button" type="submit" value="PDF izvještaj">

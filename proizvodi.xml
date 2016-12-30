@@ -73,6 +73,38 @@
 </Spice>
 
 <Spice>
+<Name>Cloves</Name>
+<Cuisine>Mediterranean, Middle Eastern</Cuisine>
+<Flavor>Earthy, Sweet</Flavor>
+<Use>Curries, Soups, Marinades, Breads</Use>
+<Price>4.55</Price>
+</Spice>
+
+<Spice>
+<Name>Coriander</Name>
+<Cuisine>Indian, Mexican</Cuisine>
+<Flavor>Peppery, Earthy</Flavor>
+<Use>Curries, Soups, Sauces</Use>
+<Price>1.80</Price>
+</Spice>
+
+<Spice>
+<Name>Cloves</Name>
+<Cuisine>Mediterranean, Middle Eastern</Cuisine>
+<Flavor>Earthy, Sweet</Flavor>
+<Use>Curries, Soups, Marinades, Breads</Use>
+<Price>4.55</Price>
+</Spice>
+
+<Spice>
+<Name>Coriander</Name>
+<Cuisine>Indian, Mexican</Cuisine>
+<Flavor>Peppery, Earthy</Flavor>
+<Use>Curries, Soups, Sauces</Use>
+<Price>1.80</Price>
+</Spice>
+
+<Spice>
 <Name>Cumin</Name>
 <Cuisine>Thai, North African</Cuisine>
 <Flavor>Smokey, Earthy</Flavor>

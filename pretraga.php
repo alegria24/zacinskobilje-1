@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE HTML>
 <HTML>
 
@@ -10,15 +6,54 @@
 <meta name="viewport" content="width=device-width">
 <TITLE>ZB Company</TITLE>
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type="text/css" href="CSS/stil_signin_page.css">
+<link rel="stylesheet" type="text/css" href="CSS/stil_proizvodi.css">
+
+<script>
+function pretraga(str) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+
+function fullpretraga(str) {
+	document.getElementById("txtHint").innerHTML = "";
+	console.log(str);
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "fullpretraga.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+
 </HEAD>
 
 <BODY>
-<<header>
+
+<header>
 <?php if(isset($_SESSION['user'])){
         if($_SESSION['user'] == "admin" || $_SESSION['user'] == "guest") { ?>
   <div class="inner">
-    <nav>	  
+    <nav>
+	  <input type="checkbox" id="nav" /><label for="nav"></label>
       <ul>
         <li><a id="home-link" href="index.php">Home</a></li>
         <li>
@@ -45,7 +80,8 @@
   <?php } }
    if((!isset($_SESSION['user']) || $_SESSION['user'] == "unknown")) { ?>
    <div class="inner">
-    <nav>	  
+    <nav>
+	  <input type="checkbox" id="nav" /><label for="nav"></label>
       <ul>
               <li><a id="home-link" href="index.php">Home</a></li>
         <li>
@@ -73,27 +109,22 @@
   <?php } ?>
 </header>
 
-<div class="forma-login">
-<form id = "formaLogin" method="post" action="checklogin.php">
-<div class="container">
-	<input type="text" placeholder="Unesite vaše korisničko ime" name="username" required>
-	<input type="password" placeholder="Unesite vašu lozinku" name="password" required>
-	<?php if(isset($_SESSION['user']) && $_SESSION['user'] == "unknown") { ?>
-        <p style="padding-top:1.5%; padding-bottom:1.5%; margin-left:-50px;" id="warningMessage"> Nepostojeći korisnik! Pokušajte se logovati ponovo. </p>
-        <?php session_unset(); } else { ?>
-        <p style="display:none" id="warningMessage"> Nepostojeći korisnik! Pokušajte se logovati ponovo. </p>
-    <?php } ?>
-	<button type="submit">Prijavi se</button>
-	<a class="psw" href="#">Zaboravili ste vašu lozinku?</a>
-</div>
+<!--Pattern-->
+
+<p style="color:white;"><b>Start typing a name in the input field below - spice or cuisine:</b></p>
+<form> 
+<input id="textBox" type="text" onkeyup="pretraga(this.value)">
+<button type="button" onclick="fullpretraga(document.getElementById('textBox').value)">Traži</button>
 </form>
-</div>
+<p style="color:white;">You should check: <span id="txtHint"></span></p>
+</body>
+
+     
 
 <footer class="footer">
-	<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
+		<p class="footer-motto">Proizvodimo začine i začinsko bilje i donosimo ih na kućnu adresu.
 		Damo im dodatni šarm tako što raznovrsne začine pakujemo u vrećice zvane “MAGIJA - Ćiribu Ćiriba”.</p>
-
-	<p class="footer-links">
+		<p class="footer-links">
 			<a href="index.php">HOME</a>
 			·
 			<a href="o_nama.php">O NAMA</a>
@@ -104,9 +135,10 @@
 			·
 			<a href="kontakt.php">KONTAKT</a>
 		</p>
-	<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
-</footer>
 
+		<p class="footer-copyright">Copyright &copy; ZB Company 2016</p>
+</footer>
+</div>
 <script src="JS/skripta_home.js" type="text/javascript"></script>
 </BODY>
 </HTML>
