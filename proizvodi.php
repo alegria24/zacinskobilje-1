@@ -2,10 +2,8 @@
   session_start();
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
-
-	$veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
-	$veza->exec("set names utf8");
-		  
+  
+  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost;charset=utf8", "admin", "adminpass");
 
   if(isset($_POST['obrisiDugme']))
   {
@@ -13,13 +11,13 @@
     $podaci = $docElement->getElementsByTagName('Spice');
     $rmv = null;
     $i = $_POST['obrisiDugme'];
-    $rmv = $podaci[$i];
+    $rmv = $podaci[$i - 1];
     if($rmv != null) $docElement->removeChild($rmv);
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
 
-	if(isset($_POST['dodajDugme']))
-	{
+if(isset($_POST['dodajDugme']))
+{
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
         $rootTag = $xml->getElementsByTagName("AllSpices")->item(0);
@@ -139,7 +137,7 @@
         $x = 1;
         $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
 
-        foreach ($rezultat as  $biljka) { ?>
+        foreach ($xml->children() as  $value) { ?>
           <ul>
               <li> <?php print $biljka['zbName'] ?> </li>
               <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
