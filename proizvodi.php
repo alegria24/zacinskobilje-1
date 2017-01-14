@@ -2,6 +2,8 @@
   session_start();
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
+  
+  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
 
   if(isset($_POST['obrisiDugme']))
   {
@@ -133,15 +135,16 @@
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
-        foreach ($xml->children() as  $value) { ?>
+        $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
 
+        foreach ($rezultat as  $biljka) { ?>
           <ul>
-              <li> <?php print $value->Name ?> </li>
-              <li><p> <?php print $value->Cuisine ?> </p></li>
-              <li> <?php print $value->Flavor ?> </li>
-  		        <li><p> <?php print $value->Use ?> </p></li>
-  		        <li> <?php print $value->Price ?> </li>
-              <li>
+              <li> <?php print $biljka['zbName'] ?> </li>
+              <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
+              <li> <?php print $biljka['zbFlavor'] ?> </li>
+  		        <li><p> <?php print $biljka['zbUse'] ?> </p></li>
+  		        <li> <?php print $biljka['zbPrice'] ?> </li>
+				<li>
       		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
                   <form action='proizvodi.php' method='post'>
                   <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
