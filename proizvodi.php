@@ -3,7 +3,7 @@
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
   
-  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
+  $veza = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=zacinskobiljecompany', 'admin', 'adminpass');
 
   if(isset($_POST['obrisiDugme']))
   {
