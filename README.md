@@ -31,8 +31,7 @@ Spirala br. 3:
 - Admin korisniku je omogućen unos i brisanje podataka - "proizvodi.php"  
 - Napravljena je opcija pretrage podataka sa prijedlozima. Dok korisnik upisuje vrijednost pretrage treba mu se prikazivati do deset najsličnijih stavki. Pretraga se vrši po poljima naziv začinskog bilja i kuhinja kojoj pripada istovremeno. Dok korisnik upisuje tekst po kojem će se pretraživati podaci, stranica se ne reloada. Kada korisnik pritisne na dugme Traži, prikazuju se svi rezultati koji zadovoljavaju uslov. Podaci koji se koriste za pretragu su iz iz XML-a.
 - Urađena je serializacija podataka u XML fajlove: začinsko bilje (proizvodi.php), korisnici (sign_up.php), poruke dobijene putem kontakt forme (kontakt.php).
-- Dodatni bod: Urađen je deployment stranice na OpenShift-u: http://zacinsko-bilje-wt-zacinsko-bilje-wt.44fs.preview.openshiftapps.com/index.php
-
+- Dodatni bod: Urađen je deployment stranice na OpenShift-u: http://zb-wtzb.44fs.preview.openshiftapps.com/index.php
 
 II Šta nije urađeno?
 - Korišten LOREM IPSUM tekst što treba izmijeniti kasnije.
