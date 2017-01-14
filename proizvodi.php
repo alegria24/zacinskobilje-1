@@ -2,10 +2,8 @@
   session_start();
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
-  
-  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=host=' . getenv('MYSQL_SERVICE_HOST') . ';charset=utf8", "Alegriaa", "inmagazin2403");
-  
   $error = false;
+  $edit = false;
   if(isset($_POST['obrisiDugme']))
   {
     $docElement = $xml->documentElement;
@@ -16,7 +14,10 @@
     if($rmv != null) $docElement->removeChild($rmv);
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
-
+  if(isset($_POST['editDugme']))
+  {
+      $edit = true;
+  }
 if(isset($_POST['dodajDugme']))
 {
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
@@ -137,16 +138,15 @@ if(isset($_POST['dodajDugme']))
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
-        $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
+        foreach ($xml->children() as  $value) { ?>
 
-        foreach ($rezultat as  $biljka) { ?>
           <ul>
-              <li> <?php print $biljka['zbName'] ?> </li>
-              <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
-              <li> <?php print $biljka['zbFlavor'] ?> </li>
-  		        <li><p> <?php print $biljka['zbUse'] ?> </p></li>
-  		        <li> <?php print $biljka['zbPrice'] ?> </li>
-				<li>
+              <li> <?php print $value->Name ?> </li>
+              <li><p> <?php print $value->Cuisine ?> </p></li>
+              <li> <?php print $value->Flavor ?> </li>
+  		        <li><p> <?php print $value->Use ?> </p></li>
+  		        <li> <?php print $value->Price ?> </li>
+              <li>
       		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
                   <form action='proizvodi.php' method='post'>
                   <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
