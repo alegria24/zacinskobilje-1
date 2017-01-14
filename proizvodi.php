@@ -2,8 +2,6 @@
   session_start();
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
-  
-  $veza = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=zacinskobiljecompany', 'admin', 'adminpass');
 
 	$veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
 	$veza->exec("set names utf8");
@@ -15,7 +13,7 @@
     $podaci = $docElement->getElementsByTagName('Spice');
     $rmv = null;
     $i = $_POST['obrisiDugme'];
-    $rmv = $podaci[$i - 1];
+    $rmv = $podaci[$i];
     if($rmv != null) $docElement->removeChild($rmv);
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
