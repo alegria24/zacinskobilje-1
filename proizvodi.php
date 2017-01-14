@@ -2,9 +2,10 @@
   session_start();
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
+  
+  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost;charset=utf8", "root", "");
+  
   $error = false;
-  $edit = false;
-
   if(isset($_POST['obrisiDugme']))
   {
     $docElement = $xml->documentElement;
@@ -13,24 +14,17 @@
     $i = $_POST['obrisiDugme'];
     $rmv = $podaci[$i - 1];
     if($rmv != null) $docElement->removeChild($rmv);
-
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
-  if(isset($_POST['editDugme']))
-  {
-      $edit = true;
-  }
+
 if(isset($_POST['dodajDugme']))
 {
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
         $rootTag = $xml->getElementsByTagName("AllSpices")->item(0);
-
         $dataTag = $xml->createElement("Spice");
-
         $nameTag = $xml->createElement("Name");
         $nameTag->appendChild($xml->createTextNode($_REQUEST['name']));
-
         $cuisineTag  = $xml->createElement("Cuisine");
         $cuisineTag->appendChild($xml->createTextNode($_REQUEST['cuisine']));
         $flavorTag = $xml->createElement("Flavor");
@@ -39,13 +33,11 @@ if(isset($_POST['dodajDugme']))
         $usageTag->appendChild($xml->createTextNode($_REQUEST['usage']));
 		$priceTag = $xml->createElement("Price");
         $priceTag->appendChild($xml->createTextNode($_REQUEST['price']));
-
         $dataTag->appendChild($nameTag);
 		$dataTag->appendChild($cuisineTag);
         $dataTag->appendChild($flavorTag);
         $dataTag->appendChild($usageTag);
 		$dataTag->appendChild($priceTag);
-
         $rootTag->appendChild($dataTag);
         $xml->save('proizvodi.xml');
         header('Location:'.$_SERVER['PHP_SELF']);
@@ -145,15 +137,16 @@ if(isset($_POST['dodajDugme']))
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
-        foreach ($xml->children() as  $value) { ?>
+        $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
 
+        foreach ($rezultat as  $biljka) { ?>
           <ul>
-              <li> <?php print $value->Name ?> </li>
-              <li><p> <?php print $value->Cuisine ?> </p></li>
-              <li> <?php print $value->Flavor ?> </li>
-  		        <li><p> <?php print $value->Use ?> </p></li>
-  		        <li> <?php print $value->Price ?> </li>
-              <li>
+              <li> <?php print $biljka['zbName'] ?> </li>
+              <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
+              <li> <?php print $biljka['zbFlavor'] ?> </li>
+  		        <li><p> <?php print $biljka['zbUse'] ?> </p></li>
+  		        <li> <?php print $biljka['zbPrice'] ?> </li>
+				<li>
       		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
                   <form action='proizvodi.php' method='post'>
                   <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
@@ -167,7 +160,6 @@ if(isset($_POST['dodajDugme']))
 	<!--End Pattern-->
 
 	<?php
-
         if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){ ?>
 
           <form align='center' id='proizvodForma' action='proizvodi.php' method='post'>;
