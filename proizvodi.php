@@ -5,6 +5,10 @@
   
   $veza = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=zacinskobiljecompany', 'admin', 'adminpass');
 
+	$veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
+	$veza->exec("set names utf8");
+		  
+
   if(isset($_POST['obrisiDugme']))
   {
     $docElement = $xml->documentElement;
