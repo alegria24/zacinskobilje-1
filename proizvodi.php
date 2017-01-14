@@ -14,6 +14,7 @@
 			$value = $query->execute();
 		  }
 
+	if(isset($_POST['addBtn']))
 {
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
