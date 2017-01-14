@@ -3,9 +3,7 @@
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
   
-  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost;charset=utf8", "admin", "adminpass");
-
-  if(isset($_POST['obrisiDugme']))
+   if(isset($_POST['obrisiDugme']))
   {
     $docElement = $xml->documentElement;
     $podaci = $docElement->getElementsByTagName('Spice');
@@ -118,9 +116,6 @@ if(isset($_POST['dodajDugme']))
   <?php } ?>
 </header>
 
-<!--Pattern-->
-
-
 <div class="list">
   <ul>
     <li>Spice</li>
@@ -130,13 +125,9 @@ if(isset($_POST['dodajDugme']))
     <li>Price</li>
 	<li></li>
   </ul>
-
-
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
-        $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
-
         foreach ($xml->children() as  $value) { ?>
           <ul>
               <li> <?php print $biljka['zbName'] ?> </li>
@@ -155,7 +146,6 @@ if(isset($_POST['dodajDugme']))
           </ul>
       <?php $x++; }  ?>
 </div>
-	<!--End Pattern-->
 
 	<?php
         if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){ ?>
@@ -184,6 +174,9 @@ if(isset($_POST['dodajDugme']))
             </form>
             <form style="display:inline-block;" id="downloadForma" action="downloadcsv.php">
               <input id="download-button" type="submit" value="Download csv">
+            </form>
+			<form style="display:inline-block;" id="konverzijaForma" action="xmltodb.php">
+              <input id="konverzija-button" type="submit" value="XML to DB">
             </form>
             <?php } ?>
 		</div>
