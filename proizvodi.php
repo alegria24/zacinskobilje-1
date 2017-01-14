@@ -175,7 +175,7 @@ if(isset($_POST['dodajDugme']))
             <form style="display:inline-block;" id="downloadForma" action="downloadcsv.php">
               <input id="download-button" type="submit" value="Download csv">
             </form>
-			<form style="display:inline-block;" id="konverzijaForma" action="xmltodb.php">
+			<form style="display:inline-block;" id="konverzijaForma" action="">
               <input id="konverzija-button" type="submit" value="XML to DB">
             </form>
             <?php } ?>
