@@ -37,7 +37,7 @@ Spirala br. 4
 
 a) Pogledati zacinskobiljecompany.sql
 b) xmltodb.php
-d) http://zb-wt16964.44fs.preview.openshiftapps.com/o_nama.php
+d) http://wt16964-zacinsko-bilje.44fs.preview.openshiftapps.com/
 e) rest.php
 f) folder 'POSTMAN'
 
