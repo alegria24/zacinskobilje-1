@@ -3,8 +3,6 @@
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
 
-  $error = false;
-  $edit = false;
   if(isset($_POST['obrisiDugme']))
   {
     $docElement = $xml->documentElement;
@@ -15,12 +13,9 @@
     if($rmv != null) $docElement->removeChild($rmv);
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
-  if(isset($_POST['editDugme']))
-  {
-      $edit = true;
-  }
-if(isset($_POST['dodajDugme']))
-{
+
+	if(isset($_POST['dodajDugme']))
+	{
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
         $rootTag = $xml->getElementsByTagName("AllSpices")->item(0);
@@ -44,7 +39,6 @@ if(isset($_POST['dodajDugme']))
         $xml->save('proizvodi.xml');
         header('Location:'.$_SERVER['PHP_SELF']);
     }
-    else $error = true;
 }
 ?>
 
