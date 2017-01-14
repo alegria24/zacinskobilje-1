@@ -3,18 +3,17 @@
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
   
-   if(isset($_POST['obrisiDugme']))
-  {
-    $docElement = $xml->documentElement;
-    $podaci = $docElement->getElementsByTagName('Spice');
-    $rmv = null;
-    $i = $_POST['obrisiDugme'];
-    $rmv = $podaci[$i];
-    if($rmv != null) $docElement->removeChild($rmv);
-    file_put_contents('proizvodi.xml', $xml->saveXML());
-  }
+   $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=localhost", "admin", "adminpass");
+   $veza->exec("set names utf8");
+  
+	   if(isset($_POST['deleteBtn']))
+		  {
+			$id  = $_POST['id'];
+			$query = $veza->prepare("DELETE FROM zacinskobilje WHERE zbID=?");
+			$query->bindValue(1, $id, PDO::PARAM_INT);
+			$value = $query->execute();
+		  }
 
-if(isset($_POST['dodajDugme']))
 {
     if($_POST['name'] != "" && $_POST['cuisine'] != "" && $_POST['flavor'] != "" && $_POST['usage'] != "" && $_POST['price'] != "")
     {
@@ -128,18 +127,20 @@ if(isset($_POST['dodajDugme']))
       <?php
         $xml = simplexml_load_file('proizvodi.xml');
         $x = 1;
-        foreach ($xml->children() as  $value) { ?>
+        $rezultat = $veza->query("select zbID, zbName, zbCuisine, zbFlavor, zbUse, zbPrice from zacinskobilje");
+
+        foreach ($rezultat as  $biljka) { ?>
           <ul>
-              <li> <?php print $value->Name ?> </li>
-              <li><p> <?php print $value->Cuisine ?> </p></li>
-              <li> <?php print $value->Flavor ?> </li>
-  		        <li><p> <?php print $value->Use ?> </p></li>
-  		        <li> <?php print $value->Price ?> </li>
-              <li>
+              <li> <?php print $biljka['zbName'] ?> </li>
+              <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
+              <li> <?php print $biljka['zbFlavor'] ?> </li>
+  		        <li><p> <?php print $biljka['zbUse'] ?> </p></li>
+  		        <li> <?php print $biljka['zbPrice'] ?> </li>
+				<li>
       		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
                   <form action='proizvodi.php' method='post'>
-                  <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
-                  <button type="submit" name="obrisiDugme" value="<?php echo $x;?>"> Delete </button>
+				  <button type="submit" name="deleteBtn" value="<?php echo $x;?>"> Delete </button>
+				  <input type="hidden" name="id" value="<?php print $biljka['zbID']?>">
                   </form>
                 <?php } ?>
               </li>
@@ -157,10 +158,8 @@ if(isset($_POST['dodajDugme']))
             <input type='text' id="SpiceFlavor" name='flavor' placeholder='Flavor'>
 			<input type='text' id="SpiceUsage" name='usage' placeholder='Usage'>
             <input type='text' id="SpicePrice" name='price' placeholder='Price'>
-            <input id='dodaj-button' name='dodajDugme' type='submit' value='Add' />
-            <?php if($error == true) { ?>
-              <p style="padding-top:1.5%; padding-bottom:0.2%; margin-left:-50px;" id="warningMessage"> Podaci nisu u ispravnom formatu! </p>
-        <?php }} ?>
+            <input id='dodaj-button' name='addBtn' type='submit' value='Add' />
+        <?php } ?>
           </form>
 
         <!-- Izvjestaji-->
@@ -175,7 +174,7 @@ if(isset($_POST['dodajDugme']))
             <form style="display:inline-block;" id="downloadForma" action="downloadcsv.php">
               <input id="download-button" type="submit" value="Download csv">
             </form>
-			<form style="display:inline-block;" id="konverzijaForma" action="">
+			<form style="display:inline-block;" id="konverzijaForma" action="xmltodb.php">
               <input id="konverzija-button" type="submit" value="XML to DB">
             </form>
             <?php } ?>
