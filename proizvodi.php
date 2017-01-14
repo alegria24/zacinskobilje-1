@@ -9,7 +9,7 @@
     $podaci = $docElement->getElementsByTagName('Spice');
     $rmv = null;
     $i = $_POST['obrisiDugme'];
-    $rmv = $podaci[$i - 1];
+    $rmv = $podaci[$i];
     if($rmv != null) $docElement->removeChild($rmv);
     file_put_contents('proizvodi.xml', $xml->saveXML());
   }
