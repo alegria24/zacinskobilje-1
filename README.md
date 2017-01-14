@@ -33,6 +33,14 @@ Spirala br. 3:
 - Urađena je serializacija podataka u XML fajlove: začinsko bilje (proizvodi.php), korisnici (sign_up.php), poruke dobijene putem kontakt forme (kontakt.php).
 - Dodatni bod: Urađen je deployment stranice na OpenShift-u: http://zb-wt-etf.44fs.preview.openshiftapps.com/
 
+Spirala br. 4
+
+a) Pogledati zacinskobiljecompany.sql
+b) xmltodb.php
+d) http://zb-wt16964.44fs.preview.openshiftapps.com/o_nama.php
+e) rest.php
+f) folder 'POSTMAN'
+
 II Šta nije urađeno?
 - Korišten LOREM IPSUM tekst što treba izmijeniti kasnije.
 
