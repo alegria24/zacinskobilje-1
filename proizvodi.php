@@ -130,12 +130,12 @@ if(isset($_POST['dodajDugme']))
         $x = 1;
         foreach ($xml->children() as  $value) { ?>
           <ul>
-              <li> <?php print $biljka['zbName'] ?> </li>
-              <li><p> <?php print $biljka['zbCuisine'] ?> </p></li>
-              <li> <?php print $biljka['zbFlavor'] ?> </li>
-  		        <li><p> <?php print $biljka['zbUse'] ?> </p></li>
-  		        <li> <?php print $biljka['zbPrice'] ?> </li>
-				<li>
+              <li> <?php print $value->Name ?> </li>
+              <li><p> <?php print $value->Cuisine ?> </p></li>
+              <li> <?php print $value->Flavor ?> </li>
+  		        <li><p> <?php print $value->Use ?> </p></li>
+  		        <li> <?php print $value->Price ?> </li>
+              <li>
       		      <?php if(isset($_SESSION['user']) && $_SESSION['user'] == "admin"){?>
                   <form action='proizvodi.php' method='post'>
                   <button type="submit" name="editDugme" value="<?php echo $x;?>"> Edit </button>
