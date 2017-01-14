@@ -3,7 +3,7 @@
   $xml = new DOMDocument();
   $xml->load('proizvodi.xml');
   
-  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=host=' . getenv('MYSQL_SERVICE_HOST') . ';charset=utf8", "Alegriaa", "inmagazin2403");
+  $veza = new PDO("mysql:dbname=zacinskobiljecompany;host=host=' . getenv('MYSQL_SERVICE_HOST') . '; port=3306; charset=utf8", "Alegriaa", "inmagazin2403");
   
   $error = false;
   if(isset($_POST['obrisiDugme']))
